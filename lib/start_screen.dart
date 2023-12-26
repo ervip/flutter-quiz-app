@@ -17,7 +17,7 @@ class StartScreen extends StatelessWidget {
           const SizedBox(height: 50),
           TextButton(
             onPressed: () {},
-            child: const ColoredText('Start', Colors.white),
+            child: const ColoredText('➤\t\tBegin', Colors.white),
           )
         ],
       ),
