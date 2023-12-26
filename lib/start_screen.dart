@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:quiz_app/colored_text.dart';
-
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
 
@@ -11,13 +9,25 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/images/quiz-logo.png', width: 150, height: 150),
+          Image.asset('assets/images/quiz-logo.png', width: 300, height: 300),
           const SizedBox(height: 50),
-          const ColoredText('Learn flutter the fun way!', Colors.white),
+          const Text(
+            'Learn flutter the fun way !!',
+            style: TextStyle(
+              color: Colors.white,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
           const SizedBox(height: 50),
           TextButton(
             onPressed: () {},
-            child: const ColoredText('➤\t\tBegin', Colors.white),
+            child: const Text(
+              '➤\t\tBegin',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           )
         ],
       ),
