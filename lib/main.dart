@@ -11,9 +11,7 @@ void main() {
         decoration: const BoxDecoration(
           color: Color.fromARGB(255, 4, 7, 58),
         ),
-        child: const Center(
-          child: Quiz(),
-        ),
+        child: const Quiz(),
       ),
     ),
   ));
