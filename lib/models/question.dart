@@ -8,4 +8,10 @@ class Question {
     required this.options,
     required this.answer,
   });
+
+  List<String> getOptions() {
+    final shuffledOptions = List.of(options);
+    shuffledOptions.shuffle();
+    return shuffledOptions;
+  }
 }
