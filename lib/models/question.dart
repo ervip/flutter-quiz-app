@@ -14,4 +14,8 @@ class Question {
     shuffledOptions.shuffle();
     return shuffledOptions;
   }
+
+  bool checkOption(String option) {
+    return option == options[answer];
+  }
 }
