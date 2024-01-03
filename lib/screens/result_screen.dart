@@ -74,8 +74,10 @@ class _Summary extends StatelessWidget {
 
 class ResultScreen extends StatelessWidget {
   final List<String> chosenAnswers;
+  final void Function() restartHandler;
 
-  const ResultScreen({super.key, required this.chosenAnswers});
+  const ResultScreen(
+      {super.key, required this.chosenAnswers, required this.restartHandler});
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +100,7 @@ class ResultScreen extends StatelessWidget {
             _Summary(questions: questions, userAnswers: chosenAnswers),
             const SizedBox(height: 20),
             OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: restartHandler,
               icon: const Icon(Icons.restart_alt, color: Colors.white),
               label: const Text(
                 'Restart Quiz',

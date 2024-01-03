@@ -57,8 +57,16 @@ class _QuizState extends State<Quiz> {
   }
 
   void showResult() {
-    resultScreen = ResultScreen(chosenAnswers: selectedAnswers);
+    resultScreen = ResultScreen(
+        chosenAnswers: selectedAnswers, restartHandler: restartQuiz);
     _setScreen(resultScreen);
+  }
+
+  void restartQuiz() {
+    selectedAnswers.clear();
+    setState(() {
+      screen = startScreen;
+    });
   }
 
   @override
