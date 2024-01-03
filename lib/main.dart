@@ -57,7 +57,7 @@ class _QuizState extends State<Quiz> {
   }
 
   void showResult() {
-    resultScreen = const ResultScreen();
+    resultScreen = ResultScreen(chosenAnswers: selectedAnswers);
     _setScreen(resultScreen);
   }
 
