@@ -11,11 +11,22 @@ class _Summary extends StatelessWidget {
       children: (summary['explained'] as List<dynamic>)
           .map(
             (e) => ListTile(
-              leading: Icon(
-                e['true_or_false'] as bool ? Icons.check : Icons.close,
-                color: e['true_or_false'] as bool
-                    ? Colors.greenAccent
-                    : Colors.redAccent,
+              leading: Container(
+                width: 30,
+                height: 30,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: e['true_or_false'] as bool
+                      ? const Color.fromARGB(255, 28, 135, 83)
+                      : const Color.fromARGB(255, 189, 79, 79),
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Text((e['index'] + 1).toString(),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    )),
               ),
               title: Text(
                 e['question'] as String,
@@ -27,8 +38,10 @@ class _Summary extends StatelessWidget {
               subtitle: Text(
                 ('You\'ve selected: ${e["selected"]}\n'
                     '${e["correct"]} is the correct answer.'),
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                style: TextStyle(
+                  color: e['true_or_false'] as bool
+                      ? const Color.fromARGB(255, 28, 135, 83)
+                      : const Color.fromARGB(255, 189, 79, 79),
                 ),
               ),
             ),
